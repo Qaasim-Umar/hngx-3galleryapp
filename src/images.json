@@ -1,0 +1,180 @@
+[
+  {
+    "id": "image0",
+    "src": "images/Rectangle1.png",
+    "tags": [
+      "dog",
+      "animal",
+      "puppy"
+    ],
+    "alt": "Image 0"
+  },
+  {
+    "id": "image1",
+    "src": "images/Rectangle2.png",
+    "tags": [
+      "bear",
+      "animal",
+      "snow"
+    ],
+    "alt": "Image 1"
+  },
+  {
+    "id": "image2",
+    "src": "images/Rectangle3.png",
+    "tags": [
+      "deer",
+      "animal",
+      "forest"
+    ],
+    "alt": "Image 2"
+  },
+  {
+    "id": "image3",
+    "src": "images/Rectangle4.png",
+    "tags": [
+      "leopard",
+      "animal",
+      "wild"
+    ],
+    "alt": "Image 3"
+  },
+  {
+    "id": "image4",
+    "src": "images/Rectangle8.png",
+    "tags": [
+      "eagle",
+      "bird",
+      "flying"
+    ],
+    "alt": "Image 4"
+  },
+  {
+    "id": "image5",
+    "src": "images/Rectangle5.png",
+    "tags": [
+      "cock",
+      "bird"
+    ],
+    "alt": "Image 5"
+  },
+  {
+    "id": "image6",
+    "src": "images/Rectangle6.png",
+    "tags": [
+      "wolf",
+      "animal",
+      "wild"
+    ],
+    "alt": "Image 6"
+  },
+  {
+    "id": "image7",
+    "src": "images/Rectangle7.png",
+    "tags": [
+      "butterfly",
+      "flower",
+      "insect"
+    ],
+    "alt": "Image 7"
+  },
+  {
+    "id": "image8",
+    "src": "images/Rectangle8.png",
+    "tags": [
+      "eagle",
+      "bird",
+      "flying"
+    ],
+    "alt": "Image 8"
+  },
+  {
+    "id": "image9",
+    "src": "images/Rectangle1.png",
+    "tags": [
+      "dog",
+      "animal",
+      "puppy"
+    ],
+    "alt": "Image 9"
+  },
+  {
+    "id": "image10",
+    "src": "images/Rectangle2.png",
+    "tags": [
+      "bear",
+      "animal",
+      "snow"
+    ],
+    "alt": "Image 10"
+  },
+  {
+    "id": "image11",
+    "src": "images/Rectangle3.png",
+    "tags": [
+      "deer",
+      "animal",
+      "forest"
+    ],
+    "alt": "Image 11"
+  },
+  {
+    "id": "image12",
+    "src": "images/Rectangle4.png",
+    "tags": [
+      "leopard",
+      "animal",
+      "wild"
+    ],
+    "alt": "Image 12"
+  },
+  {
+    "id": "image13",
+    "src": "images/Rectangle5.png",
+    "tags": [
+      "cock",
+      "bird"
+    ],
+    "alt": "Image 13"
+  },
+  {
+    "id": "image14",
+    "src": "images/Rectangle6.png",
+    "tags": [
+      "wolf",
+      "animal",
+      "wild"
+    ],
+    "alt": "Image 14"
+  },
+  {
+    "id": "image15",
+    "src": "images/Rectangle7.png",
+    "tags": [
+      "butterfly",
+      "flower",
+      "insect"
+    ],
+    "alt": "Image 15"
+  },
+  {
+    "id": "image16",
+    "src": "images/Rectangle8.png",
+    "tags": [
+      "eagle",
+      "bird",
+      "flying"
+    ],
+    "alt": "Image 17"
+  },
+  {
+    "id": "image17",
+    "src": "images/Rectangle1.png",
+    "tags": [
+      "dog",
+      "animal",
+      "puppy"
+    ],
+    "alt": "Image 17"
+  }
+]

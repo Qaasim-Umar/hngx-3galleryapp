@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Raleway', sans-serif;
+}
+*{
+  font-family: 'Raleway', sans-serif;
+}
+
+.sign-in-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  background-color: #FC6E04;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 15px 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 13px 30px;
+  border: none;
+  margin: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.link{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #81664b;
+  color: #ffffff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .sign-in-container {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-in-container {
+    max-width: 90%;
+  }
+}
