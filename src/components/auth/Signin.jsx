@@ -15,16 +15,14 @@ const Signin = () => {
 
     const signin = async (e) => {
         e.preventDefault();
-       
         setIsLoading(true);
-
         //  sign-in logic here
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
                 setIsLoading(false);
                 navigate('/Home');
             }).catch((error) => {
-               
+
                 setIsLoading(false);
                 console.log(error);
             })
@@ -58,7 +56,6 @@ const Signin = () => {
                         Log In
                     </button>
                 </form>
-
                 <p>New Instead ? <Link className='link' to='Signup'>REGISTER</Link> </p>
             </div>
         </div>

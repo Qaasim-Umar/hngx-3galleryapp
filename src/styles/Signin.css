@@ -3,10 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
-*{
-  font-family: 'Raleway', sans-serif;
+* {
+  font-family: "Raleway", sans-serif;
 }
 
 .sign-in-container {
@@ -15,7 +15,7 @@
   padding: 20px;
   margin: 20px;
   text-align: center;
-  background-color: #FC6E04;
+  background-color: #fc6e04;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   color: white;
@@ -58,7 +58,7 @@ button[type="submit"] {
   font-size: 16px;
   transition: background-color 0.3s;
 }
-.link{
+.link {
   text-decoration: none;
   color: #ffffff;
 }

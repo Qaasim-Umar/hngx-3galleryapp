@@ -3,11 +3,12 @@ import Imagesgrid from '../sections/Imagesgrid'
 import Hero from '../sections/Hero'
 import { useState } from 'react'
 import Footer from '../sections/Footer'
-import imglist  from '../images.json'
+import imglist from '../images.json'
 
 const Home = () => {
+    // query to handle search from hero component
+    
     const [searchQuery, setSearchQuery] = useState("");
-
     const handleSearch = (query) => {
         setSearchQuery(query);
     };
@@ -15,9 +16,8 @@ const Home = () => {
         <div>
             <Hero onSearch={handleSearch} />
             <Imagesgrid searchQuery={searchQuery} imglist={imglist} />
-            <Footer/>
+            <Footer />
         </div>
     )
 }
-
 export default Home

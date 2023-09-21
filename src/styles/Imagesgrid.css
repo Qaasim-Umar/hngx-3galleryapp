@@ -10,10 +10,9 @@
 }
 
 @media (max-width: 768px) {
-  .grid-header{
-  margin-left: 1rem;
+  .grid-header {
+    margin-left: 1rem;
   }
-
   .row {
     grid-template-columns: 1fr 1fr;
   }

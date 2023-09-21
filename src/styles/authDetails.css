@@ -1,36 +1,35 @@
-.hero-header{
-padding: .7rem 1.5rem;
-color: black;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: rgb(254, 255, 216);
+.hero-header {
+  padding: 0.7rem 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(254, 255, 216);
 }
 
-.button-flex{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content:flex-end;
-    padding-right: 3rem;
+.button-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-right: 3rem;
 }
-.signout{
-    padding: .4rem .9rem;
-    border-radius: .2rem;
-    border: none;
-    background-color:#FC6E04;
-    color: white;
+.signout {
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: #fc6e04;
+  color: white;
 }
 @media (max-width: 768px) {
-    .button-flex{
-        gap: 0rem;
-        flex-direction: column-reverse;
-        padding: 0;
-        margin-top: 1rem;
+  .button-flex {
+    gap: 0rem;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin-top: 1rem;
+  }
 
-    }
-  
-    .signedOut-text{
-        font-size: 13px;
-    }
+  .signedOut-text {
+    font-size: 13px;
+  }
 }

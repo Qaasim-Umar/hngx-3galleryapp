@@ -9,7 +9,7 @@ const Signup = () => {
 
   const signup = (e) => {
     e.preventDefault();
-    //  sign-in logic here
+    //  sign-up logic here
     createUserWithEmailAndPassword(auth, email, password)
      .then((userCredential) => {
         console.log(userCredential)
@@ -18,7 +18,6 @@ console.log(error);
      })
 
 };
-
   return (
     <div className='container'>
         <div className="sign-in-container">
@@ -50,9 +49,7 @@ console.log(error);
             </form>
             <p>Have an Account ? <Link className='link' to='/'>LOG IN</Link> </p>
             </div>
-
     </div>
   )
 }
-
 export default Signup

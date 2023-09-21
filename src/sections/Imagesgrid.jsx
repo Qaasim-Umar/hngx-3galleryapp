@@ -1,60 +1,48 @@
 import React from 'react'
 import imglist from '../images.json'
 import '../styles/Imagesgrid.css'
-import { useState,  useEffect } from 'react';
+import { useState, useRef,  useEffect } from 'react';
 
 
 
 const Imagesgrid = ({ searchQuery }) => {
+  
 
    
-      const [imageOrder, setImageOrder] = useState([]);
+      const [dragged, setDragged] = useState(false);
       const [filteredImages, setFilteredImages] = useState([]);
     
+      const dragSection = useRef(null);
+      const draggedOverSection = useRef(null);
+    
       // Event handlers
-      const handleDragStart = (e, index) => {
-        e.dataTransfer.setData('index', index);
+      const handleDragStart = (index) => {
+        setDragged(!dragged);
+        dragSection.current = index;
       };
     
-      const handleDragOver = (e, index) => {
-        e.preventDefault();
+      const handleDragEnter = (index) => {
+        setDragged(true);
+        if (dragSection.current !== null) {
+          draggedOverSection.current = index;
+        }
       };
     
-      const handleDrop = (e, targetIndex) => {
-        e.preventDefault();
-        const draggedIndex = parseInt(e.dataTransfer.getData('index'));
+      const handleSort = () => {
+        setDragged(!dragged);
     
-        if (draggedIndex !== targetIndex) {
-          const newImageOrder = [...imageOrder];
-    
-          // Swap positions of the dragged image and the target image
-          [newImageOrder[draggedIndex], newImageOrder[targetIndex]] = [
-            newImageOrder[targetIndex],
-            newImageOrder[draggedIndex],
-          ];
-    
-          setImageOrder(newImageOrder);
+        if (dragSection.current !== null && draggedOverSection.current !== null) {
+          const searchResultsClone = [...filteredImages];
+          const temp = searchResultsClone[dragSection.current];
+          searchResultsClone[dragSection.current] =
+            searchResultsClone[draggedOverSection.current];
+          searchResultsClone[draggedOverSection.current] = temp;
+          setFilteredImages(searchResultsClone);
+          dragSection.current = null;
+          draggedOverSection.current = null;
         }
       };
 
-
-      const handleTouchStart = (e, index) => {
-        e.preventDefault();
-        e.stopPropagation();
-        e.currentTarget.setAttribute('data-index', index);
-      };
-    
-      const handleTouchMove = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const index = e.currentTarget.getAttribute('data-index');
-        if (index !== null) {
-          const targetIndex = imageOrder.indexOf(parseInt(index));
-          if (targetIndex !== -1) {
-            handleDrop(e, targetIndex);
-          }
-        }
-      };
     
       useEffect(() => {
         // Filter the images based on the search query
@@ -64,7 +52,7 @@ const Imagesgrid = ({ searchQuery }) => {
           )
         );
         setFilteredImages(filtered);
-        setImageOrder(filtered.map((image, index) => index));
+        setDragged(filtered.map((image, index) => index));
       }, [searchQuery]);
     
       if (!filteredImages || filteredImages.length === 0) {
@@ -79,16 +67,17 @@ const Imagesgrid = ({ searchQuery }) => {
                 <div className="row">
 
                     {
-                       imageOrder.map((index)  => (
-                            <div key={index} className='img-container'  draggable="true"
-                            onDragStart={(e) => handleDragStart(e, index)}
-                            onDragOver={(e) => handleDragOver(e, index)}
-                            onDrop={(e) => handleDrop(e, index)}
-                            onTouchStart={(e) => handleTouchStart(e, index)}
-                            onTouchMove={(e) => handleTouchMove(e)}
+                       filteredImages.map((image, index)   => (
+                            <div key={index} className='img-container'  draggable
+                            onDragStart={() => handleDragStart(index)}
+                            onDragEnter={() => handleDragEnter(index)}
+                            onDragEnd={handleSort}
+                            onTouchStart={() => handleDragStart(index)}
+                            onTouchMove={() => handleDragEnter(index)}
+                            onTouchEnd={handleSort}
                           >
-                                <img src={filteredImages[index].src} alt={filteredImages[index].alt}  />
-                                {/* <p>{image.tags + ""}</p> */}
+                                <img src={image.src} alt={image.alt}  />
+                               
                             </div>
                         ))
                     }
