@@ -36,6 +36,25 @@ const Imagesgrid = ({ searchQuery }) => {
           setImageOrder(newImageOrder);
         }
       };
+
+
+      const handleTouchStart = (e, index) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.currentTarget.setAttribute('data-index', index);
+      };
+    
+      const handleTouchMove = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const index = e.currentTarget.getAttribute('data-index');
+        if (index !== null) {
+          const targetIndex = imageOrder.indexOf(parseInt(index));
+          if (targetIndex !== -1) {
+            handleDrop(e, targetIndex);
+          }
+        }
+      };
     
       useEffect(() => {
         // Filter the images based on the search query
@@ -65,6 +84,8 @@ const Imagesgrid = ({ searchQuery }) => {
                             onDragStart={(e) => handleDragStart(e, index)}
                             onDragOver={(e) => handleDragOver(e, index)}
                             onDrop={(e) => handleDrop(e, index)}
+                            onTouchStart={(e) => handleTouchStart(e, index)}
+                            onTouchMove={(e) => handleTouchMove(e)}
                           >
                                 <img src={filteredImages[index].src} alt={filteredImages[index].alt}  />
                                 {/* <p>{image.tags + ""}</p> */}
