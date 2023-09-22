@@ -52,6 +52,9 @@ const Imagesgrid = ({ searchQuery }) => {
     event.preventDefault(); // Prevent the default behavior of touch events
     handleDragEnter(index);
   };
+  const handleContextMenu = (event) => {
+    event.preventDefault();
+  };
   
   const handleTouchEnd = (event) => {
     event.preventDefault(); // Prevent the default behavior of touch events
@@ -83,13 +86,14 @@ const Imagesgrid = ({ searchQuery }) => {
 
           {
             filteredImages.map((image, index) => (
-              <div key={index} className='img-container'  draggable
+              <div key={index} className='img-container'   draggable
               onDragStart={() => handleDragStart(index)}
               onDragEnter={() => handleDragEnter(index)}
               onDragEnd={handleSort}
               onTouchStart={(event) => handleTouchStart(event, index)}
               onTouchMove={(event) => handleTouchMove(event, index)}
               onTouchEnd={(event) => handleTouchEnd(event)}
+              onContextMenu={handleContextMenu}
               >
                 <img src={image.src} alt={image.alt} />
 
