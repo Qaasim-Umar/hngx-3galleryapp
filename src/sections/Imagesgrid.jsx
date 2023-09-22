@@ -83,13 +83,22 @@ const Imagesgrid = ({ searchQuery }) => {
 
                     {
                        filteredImages.map((image, index)   => (
-                            <div key={index} className='img-container'    draggable
+                            <div key={index} className='img-container'     draggable
                             onDragStart={() => handleDragStart(index)}
                             onDragEnter={() => handleDragEnter(index)}
                             onDragEnd={handleSort}
-                            onTouchStart={() => handleTouchStart(index)} 
-                            onTouchMove={() => handleTouchMove(index)} 
-                            onTouchEnd={handleTouchEnd} 
+                            onTouchStart={(e) => {
+                              e.preventDefault(); // Prevent the default touch behavior (opening the image)
+                              handleTouchStart(index); // Call your touch start handler
+                            }}
+                            onTouchMove={(e) => {
+                              e.preventDefault(); // Prevent the default touch behavior (scrolling or zooming)
+                              handleTouchMove(index); // Call your touch move handler
+                            }}
+                            onTouchEnd={(e) => {
+                              e.preventDefault(); // Prevent the default touch behavior (releasing the touch)
+                              handleTouchEnd(); // Call your touch end handler
+                            }}
                           >
                                 <img src={image.src} alt={image.alt}  />
                                
