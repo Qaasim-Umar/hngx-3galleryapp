@@ -43,6 +43,21 @@ const Imagesgrid = ({ searchQuery }) => {
         }
       };
 
+      const handleTouchStart = (index) => {
+        setDragged(!dragged);
+        dragSection.current = index;
+      };
+      
+      const handleTouchMove = (index) => {
+        setDragged(true);
+        if (dragSection.current !== null) {
+          draggedOverSection.current = index;
+        }
+      };
+      
+      const handleTouchEnd = () => {
+        handleSort();
+      };
     
       useEffect(() => {
         // Filter the images based on the search query
@@ -68,13 +83,13 @@ const Imagesgrid = ({ searchQuery }) => {
 
                     {
                        filteredImages.map((image, index)   => (
-                            <div key={index} className='img-container'  draggable
+                            <div key={index} className='img-container'    draggable
                             onDragStart={() => handleDragStart(index)}
                             onDragEnter={() => handleDragEnter(index)}
                             onDragEnd={handleSort}
-                            onTouchStart={() => handleDragStart(index)}
-                            onTouchMove={() => handleDragEnter(index)}
-                            onTouchEnd={handleSort}
+                            onTouchStart={() => handleTouchStart(index)} 
+                            onTouchMove={() => handleTouchMove(index)} 
+                            onTouchEnd={handleTouchEnd} 
                           >
                                 <img src={image.src} alt={image.alt}  />
                                
